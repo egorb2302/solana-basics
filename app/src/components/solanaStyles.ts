@@ -7,10 +7,6 @@ const styles = {
 
   eyebrow: "text-xs uppercase tracking-[0.18em] text-[#9C96AA]",
   title: "text-2xl font-semibold text-[#F5F3FF] font-['Space_Grotesk']",
-
-  // Обёртка вокруг <WalletMultiButton/> — здесь arbitrary-variants Tailwind
-  // достают до внутренних узлов библиотеки (иконка, дропдаун), которые
-  // сами по себе className не принимают.
   walletButtonWrapper:
     "[&_.wallet-adapter-button-start-icon]:!w-6 [&_.wallet-adapter-button-start-icon]:!h-6 " +
     "[&_.wallet-adapter-button-start-icon_img]:!rounded-lg " +
@@ -20,7 +16,6 @@ const styles = {
     "[&_.wallet-adapter-dropdown-list-item]:!font-['Inter'] [&_.wallet-adapter-dropdown-list-item]:!rounded-xl " +
     "[&_.wallet-adapter-dropdown-list-item:hover]:!bg-[#2A2733]",
 
-  // Класс на сам корневой button адаптера (className проп у него есть)
   walletButton:
     "!w-full !justify-center !rounded-2xl !h-12 !bg-gradient-to-r !from-[#9945FF] !to-[#14F195] " +
     "!font-['Inter'] !font-semibold !text-sm hover:!opacity-90 !transition-opacity",

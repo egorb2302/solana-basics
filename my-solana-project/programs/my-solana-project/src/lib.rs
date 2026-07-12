@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 use anchor_lang::system_program::{transfer, Transfer};
 
-declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
+declare_id!("2aq3ztLFrXogHHPXghEVLe6vpaTeU385HsiHFk1tatWo");
 
 #[program]
 pub mod wallet_vault {
@@ -22,7 +22,7 @@ pub mod wallet_vault {
             from: ctx.accounts.user.to_account_info(),
             to: ctx.accounts.vault.to_account_info(),
         };
-        let cpi_ctx = CpiContext::new(ctx.accounts.system_program.to_account_info(), cpi_accounts);
+        let cpi_ctx = CpiContext::new(System::id(), cpi_accounts); 
         transfer(cpi_ctx, amount)?;
 
         let vault = &mut ctx.accounts.vault;

@@ -17,11 +17,11 @@ const styles = {
     "[&_.wallet-adapter-dropdown-list-item:hover]:!bg-[#2A2733]",
 
   walletButton:
-    "!w-full !justify-center !rounded-2xl !h-12 !bg-gradient-to-r !from-[#9945FF] !to-[#14F195] " +
+    "!w-full !justify-center !rounded-2xl !h-12 !bg-gradient-to-r !from-[#9945FF] !to-[#14F195] cursor-pointer" +
     "!font-['Inter'] !font-semibold !text-sm hover:!opacity-90 !transition-opacity",
 
   actionButtonBase:
-    "w-full rounded-xl px-4 py-3 text-sm font-medium font-['Inter'] transition-colors text-left",
+    "w-full rounded-xl px-4 py-3 text-sm font-medium font-['Inter'] transition-colors text-left cursor-pointer",
   actionButtonGhost:
     "bg-[#1E1B26] border border-[#2A2733] text-[#D9D5E3] hover:border-[#3A3648] hover:bg-[#221E30]",
   actionButtonAccent:
@@ -30,7 +30,7 @@ const styles = {
   footNote: "text-[11px] text-[#6E6980] leading-relaxed",
   link: "text-[#AB9FF2] hover:text-[#C4BAFF] underline underline-offset-2",
 
-  infoBox: "space-y-2 rounded-xl bg-[#1E1B26] border border-[#2A2733] p-3.5 w-fit",
+  infoBox: "space-y-2 rounded-xl bg-[#1E1B26] border border-[#2A2733] p-3.5 w-auto",
   infoDivider: "h-px bg-[#2A2733]",
   infoRow: "flex items-center justify-between gap-3",
   infoLabel: "text-xs text-[#9C96AA] shrink-0",
@@ -52,7 +52,7 @@ const styles = {
   fieldSuffix: "absolute right-3.5 top-1/2 -translate-y-1/2 text-xs text-[#6E6980]",
 
   submitButton:
-    "w-full rounded-xl h-12 text-sm font-semibold text-[#0B0A10] transition-opacity " +
+    "cursor-pointer w-full rounded-xl h-12 text-sm font-semibold text-[#0B0A10] transition-opacity" +
     "disabled:opacity-50 disabled:cursor-not-allowed bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:opacity-90",
 
   errorBox: "rounded-xl border border-[#FF6B6B]/30 bg-[#2A1A1D] px-3.5 py-2.5",

@@ -30,11 +30,11 @@ export default function SimulationDashboard() {
     const { connection } = useConnection();
 
     const [recipient, setRecipient] = useState<string>("");
-    const [amount, setAmount] = useState<string>("0.01");
+    const [amount, setAmount] = useState<string>("0.001");
     const [error, setError] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
     const [result, setResult] = useState<SimulationResult | null>(null);
-    const [intervalSeconds, setIntervalSeconds] = useState<number>(15);
+    const [intervalSeconds, setIntervalSeconds] = useState<number>(10);
     const [running, setRunning] = useState<boolean>(false);
 
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -63,6 +63,15 @@ export default function SimulationDashboard() {
             const simulation = await connection.simulateTransaction(tx);
 
             let feeInSol: number | null = null;
+            
+            if (simulation.value.err) {
+                console.error('Simulation failed, logs:');
+                simulation.value.logs?.forEach(log => console.log(' ', log));
+            } else {
+                console.log('Simulation succeeded, logs:');
+                simulation.value.logs?.forEach(log => console.log(' ', log));
+            }
+
             try {
                 const message = tx.compileMessage();
                 const feeResponse = await connection.getFeeForMessage(
@@ -294,6 +303,9 @@ export default function SimulationDashboard() {
                             )}
                         </div>
                     )}
+                    <p className={styles.footNote}>
+                        Cимуляция транзакции для получения информации: CU за операцию, Статус операции, Информацию по аккаунтам и Логи.
+                    </p>
                 </div>
             </div>
         </div>

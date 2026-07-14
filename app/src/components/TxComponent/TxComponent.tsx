@@ -46,7 +46,7 @@ export default function CreateTransaction() {
   };
 
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page}` + 'min-h-fit!'}>
       <div className={styles.gradientBorder}>
         <div className={styles.card}>
           <header className="space-y-1">
@@ -110,6 +110,9 @@ export default function CreateTransaction() {
               </a>
             </div>
           )}
+          <p className={styles.footNote}>
+            Отправка транзакции, с использованием SOL в devnet на тестовый адрес.
+          </p>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 const styles = {
-  page: "min-h-screen bg-[#0B0A10] flex items-center justify-center p-6 !w-fit",
+  page: "min-h-fit bg-transparent flex items-center justify-center p-6 !w-fit",
 
   gradientBorder:
     "max-w-lg rounded-[28px] p-[1.5px] bg-gradient-to-br from-[#9945FF] via-[#7B61FF] to-[#14F195] !w-fit",

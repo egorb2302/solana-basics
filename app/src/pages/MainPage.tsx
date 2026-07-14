@@ -1,4 +1,5 @@
 import CreateTransaction from "../components/TxComponent/TxComponent";
+import SimulationDashboard from "../components/TxSimulation/TxSimulation";
 // import VaultCard from "../components/VaultCard/VaultCard";
 import WalletModal from "../components/WalletModal/WalletModal";
 
@@ -8,6 +9,7 @@ export default function MainPage() {
             <WalletModal />
             <CreateTransaction />
             {/* <VaultCard /> */}
+            <SimulationDashboard />
         </div>
     )
 }
